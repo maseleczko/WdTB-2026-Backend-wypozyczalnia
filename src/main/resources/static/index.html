@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Backend działa · WdTB-2026-Backend</title>
+<title>Wypożyczalnia narzędzi · Projekt WdTB</title>
 <style>
   :root { --ink: #141e50; --blue: #006efa; --muted: #5b6685; --line: #d5def0; --bg: #f5f8fd; --tint: #e8f0ff; --ok: #1d7a4c; }
   * { box-sizing: border-box; }
@@ -37,27 +37,27 @@
   <header>
     <img class="logo" src="merito-logo.png" alt="Uniwersytet WSB Merito Wrocław">
     <span class="status"><span class="dot" aria-hidden="true"></span>Backend działa</span>
-    <h1>Wprowadzenie do technologii backendowych</h1>
-    <p>Tę stronę serwuje Wasza aplikacja Spring Boot z pliku <code>src/main/resources/static/index.html</code>.
-       Na LAB 01 wypełnijcie poniższą wizytówkę projektu. LAB 02 zaczyna się od jej prezentacji:
-       uruchamiacie aplikację i pokazujecie tę stronę.</p>
+    <h1>Wypożyczalnia narzędzi</h1>
+    <p>Projekt zespołowy z przedmiotu Wprowadzenie do technologii backendowych.
+       Na LAB 01 przygotowujemy działający szkielet aplikacji i koncepcję. Funkcje wypożyczalni
+       będziemy rozwijać na kolejnych zajęciach.</p>
   </header>
 
   <!-- LAB 01: wizytówka Waszego projektu, na jej podstawie prezentujecie projekt na początku LAB 02.
        Zastąpcie wszystkie znaczniki „uzupełnij” w nawiasach kwadratowych (reguła R1.04). -->
   <section class="card project">
-    <h2>[uzupełnij: nazwa projektu]</h2>
-    <p class="pitch">[uzupełnij: jedno zdanie – jaki problem rozwiązuje aplikacja i dla kogo]</p>
+    <h2>Projekt: wypozyczalnia</h2>
+    <p class="pitch">Aplikacja pomoże pracownikowi małej wypożyczalni narzędzi zastąpić papierowy zeszyt ewidencją sprzętu, wypożyczeń i terminów zwrotu.</p>
     <table>
-      <tr><td>Autorzy</td><td>[uzupełnij: imiona i nazwiska, grupa]</td></tr>
-      <tr><td>Dla kogo</td><td>[uzupełnij: persona, np. „Anna, właścicielka kawiarni, chce przyjmować rezerwacje stolików online”]</td></tr>
-      <tr><td>Najważniejsze funkcje</td><td>[uzupełnij: 3 funkcje, np. lista stolików, rezerwacja, raport dla właściciela]</td></tr>
+      <tr><td>Autorzy</td><td>Mateusz Masalski, Hubert Cichosz<br>Grupa nr 2</td></tr>
+      <tr><td>Dla kogo</td><td>Piotr, właściciel i pracownik lokalnej wypożyczalni, chce szybko sprawdzać dostępność narzędzi i wiedzieć, kto powinien zwrócić sprzęt.</td></tr>
+      <tr><td>Najważniejsze funkcje</td><td>Planowane: przeglądanie sprzętu i jego dostępności; rejestrowanie klientów oraz wypożyczeń; obsługa zwrotów i obliczanie kosztu wypożyczenia.</td></tr>
     </table>
     <h3>Zmiany w projekcie</h3>
     <ul>
-      <li><b>LAB 01:</b> [uzupełnij: co zmieniliście, np. nazwa projektu, konta zespołu, wizytówka]</li>
+      <li><b>LAB 01:</b> Wybrano koncepcję wypożyczalni narzędzi, zmieniono pakiet na <code>pl.wsb.wypozyczalnia</code>, klasę startową na <code>WypozyczalniaApplication</code>, nazwę aplikacji i <code>artifactId</code>, wpisano autorów, grupę, konta dwóch osób i numery indeksów do wersji oraz opisano projekt w wizytówce i pliku <code>KONCEPCJA.md</code>.</li>
     </ul>
-    <p class="muted">Na kolejnych laboratoriach dopisujcie tu kolejne punkty.</p>
+    <p class="muted">Wpisano dane dwóch osób. Instrukcja i reguła R1.03 wymagają co najmniej trzech kont zespołu.</p>
   </section>
 
   <section class="card">
