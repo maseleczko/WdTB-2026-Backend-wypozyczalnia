@@ -39,8 +39,8 @@
     <span class="status"><span class="dot" aria-hidden="true"></span>Backend działa</span>
     <h1>Wypożyczalnia narzędzi</h1>
     <p>Projekt zespołowy z przedmiotu Wprowadzenie do technologii backendowych.
-       Na LAB 01 przygotowujemy działający szkielet aplikacji i koncepcję. Funkcje wypożyczalni
-       będziemy rozwijać na kolejnych zajęciach.</p>
+       Na LAB 01 przygotowaliśmy szkielet i koncepcję, a na LAB 02 dodaliśmy tabele
+       oraz dane przykładowe. Funkcje wypożyczalni będziemy rozwijać na kolejnych zajęciach.</p>
   </header>
 
   <!-- LAB 01: wizytówka Waszego projektu, na jej podstawie prezentujecie projekt na początku LAB 02.
@@ -56,13 +56,16 @@
     <h3>Zmiany w projekcie</h3>
     <ul>
       <li><b>LAB 01:</b> Wybrano koncepcję wypożyczalni narzędzi, zmieniono pakiet na <code>pl.wsb.wypozyczalnia</code>, klasę startową na <code>WypozyczalniaApplication</code>, nazwę aplikacji i <code>artifactId</code>, wpisano autorów, grupę, konta dwóch osób i numery indeksów do wersji oraz opisano projekt w wizytówce i pliku <code>KONCEPCJA.md</code>.</li>
+      <li><b>LAB 02:</b> Dodano trzy encje JPA bez relacji: <code>Tool</code>, <code>Customer</code> i <code>Rental</code>, tabele <code>tool</code>, <code>customer</code> i <code>rental</code> oraz po trzy przykładowe rekordy. Kwoty przechowujemy jako <code>BigDecimal</code>. Włączono reguły LAB 02 w <code>pom.xml</code>.</li>
     </ul>
     <p class="muted">Wpisano dane dwóch osób. Instrukcja i reguła R1.03 wymagają co najmniej trzech kont zespołu.</p>
   </section>
 
   <section class="card">
     <h2>1. Zajrzyjcie do bazy danych</h2>
-    <p>Aplikacja ma wbudowaną bazę H2. Na start jest w niej jedna tabela, <code>user_account</code>, z kontami z pliku <code>data.sql</code>.</p>
+    <p>Aplikacja ma wbudowaną bazę H2. Tabela <code>user_account</code> przechowuje konta,
+       a <code>tool</code>, <code>customer</code> i <code>rental</code> dane wypożyczalni.
+       Dane startowe pochodzą z pliku <code>data.sql</code>.</p>
     <table>
       <tr><td>JDBC URL</td><td><code>jdbc:h2:file:./data/wdtb</code></td></tr>
       <tr><td>Użytkownik</td><td><code>sa</code></td></tr>
@@ -70,7 +73,10 @@
     </table>
     <a class="btn" href="/h2-console">Otwórz konsolę H2</a>
     <p class="muted" style="margin-top:12px">Spróbujcie zapytania:</p>
-    <pre>SELECT role, COUNT(*) FROM user_account GROUP BY role;</pre>
+    <pre>SELECT * FROM tool;
+SELECT * FROM customer;
+SELECT * FROM rental;
+SELECT role, COUNT(*) FROM user_account GROUP BY role;</pre>
   </section>
 
   <section class="card">

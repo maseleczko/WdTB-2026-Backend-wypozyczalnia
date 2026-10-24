@@ -9,8 +9,9 @@ Piotr prowadzi małą lokalną wypożyczalnię narzędzi. Obecnie zapisuje wydan
 w zeszycie. Trudno mu szybko sprawdzić dostępność sprzętu, zaległe zwroty i koszt
 wypożyczenia. Aplikacja ma porządkować te informacje w jednej bazie danych.
 
-To backend dla pracowników wypożyczalni. Na LAB 01 dostępna jest wizytówka projektu;
-opisane poniżej funkcje powstają na kolejnych laboratoriach.
+To backend dla pracowników wypożyczalni. Na LAB 01 powstała wizytówka projektu,
+a na LAB 02 trzy encje JPA z danymi startowymi. Opisane poniżej funkcje
+powstają na kolejnych laboratoriach.
 
 ## Trzy główne funkcje
 
@@ -29,7 +30,9 @@ opisane poniżej funkcje powstają na kolejnych laboratoriach.
 | `rental` | `RentalItem` / `rental_item` | Wypożyczenie, narzędzie, stawka z dnia wydania, liczba dób, data zwrotu |
 
 To pięć własnych tabel, poza gotową `user_account` z szablonu.
-Na LAB 02 tworzymy tylko `Tool`, `Customer` i `Rental`, bez relacji między encjami.
+Na LAB 02 utworzono `Tool`, `Customer` i `Rental`, bez relacji między encjami,
+z trzema przykładowymi rekordami na tabelę. Status wypożyczenia jest na tym etapie
+polem tekstowym `String`; nie dodajemy enumu ani `@Embeddable` na ocenę 5.
 Pozostałe tabele i relacje planujemy na dalszy rozwój projektu zgodnie z instrukcjami zajęć.
 Kwoty zapisujemy jako `BigDecimal`, daty jako `LocalDate`.
 

@@ -1,4 +1,18 @@
-# WdTB-2026-Backend
+# WdTB-2026-Backend-wypozyczalnia
+
+Backend małej wypożyczalni narzędzi, rozwijany na zajęciach WdTB.
+Na LAB 01 przygotowano nazwę projektu, koncepcję, konta zespołu i wizytówkę.
+Na LAB 02 dodano encje `Tool`, `Customer` i `Rental`, bez relacji,
+oraz po trzy rekordy w ich tabelach. Kwoty są zapisane jako `BigDecimal`.
+
+Wizytówka: http://localhost:8080. Konsola bazy: http://localhost:8080/h2-console.
+Uruchomienie i omówienie encji: [START.md](START.md).
+Opis pomysłu i plan rozwoju: [KONCEPCJA.md](KONCEPCJA.md).
+
+Wszystkie obowiązkowe reguły LAB 02 przechodzą. W pełnym zestawie pozostaje
+błąd R1.03: wpisano dwie osoby, a reguła prowadzącego wymaga trzech kont zespołu.
+
+## Materiały szablonu prowadzącego
 
 Szablon projektu laboratoryjnego z przedmiotu **Wprowadzenie do technologii backendowych** (Uniwersytet WSB Merito Wrocław).
 
