@@ -12,8 +12,9 @@ ignorowanego katalogu `.local-tools`. Zatrzymanie aplikacji: **Ctrl+C**.
 Uruchomienie i omówienie encji: [START.md](START.md).
 Opis pomysłu i plan rozwoju: [KONCEPCJA.md](KONCEPCJA.md).
 
-Wszystkie obowiązkowe reguły LAB 02 przechodzą. W pełnym zestawie pozostaje
-błąd R1.03: wpisano dwie osoby, a reguła prowadzącego wymaga trzech kont zespołu.
+Zespół liczy dwie osoby; według informacji zespołu skład uzgodniono z prowadzącym.
+Poza kontami autorów baza zawiera jawnie oznaczone konto techniczne, aby zapewnić
+trzy wpisy poza demo wymagane przez R1.03. Konto techniczne nie jest trzecim autorem.
 
 ## Materiały szablonu prowadzącego
 

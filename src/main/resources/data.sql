@@ -12,6 +12,12 @@ insert into user_account (email, display_name, role, created_at) values
     ('wrx101024@student.wroclaw.merito.pl', 'Mateusz Masalski', 'USER', current_timestamp),
     ('wrx81895@student.wroclaw.merito.pl', 'Hubert Cichosz', 'USER', current_timestamp);
 
+-- Dodatkowe konto techniczne dla dwuosobowego zespołu.
+-- Nie reprezentuje trzeciego autora ani studenta. Według informacji zespołu
+-- dwuosobowy skład został uzgodniony z prowadzącym; R1.03 wymaga 3 wpisów poza demo.
+insert into user_account (email, display_name, role, created_at) values
+    ('konto.techniczne@example.com', 'Konto techniczne (nie czlonek zespolu)', 'USER', current_timestamp);
+
 -- LAB 02: narzędzia. Stawki demonstracyjne w PLN za dobę.
 insert into tool (name, brand, inventory_number, daily_rate, technically_available) values
     ('Wiertarko-wkrętarka', 'Bosch', 'NAR-001', 45.00, true),

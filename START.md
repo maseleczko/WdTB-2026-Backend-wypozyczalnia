@@ -34,13 +34,9 @@ Testy obowiązkowe: `./scripts/maven.sh verify -DexcludedGroups=ocena5`.
 ## Wynik sprawdzenia LAB 01 i LAB 02
 
 Projekt sprawdzono na JDK 21 poleceniem Maven `verify -DexcludedGroups=ocena5`.
-Kompilacja oraz R1.01 (własna nazwa), R1.02 (start aplikacji z H2),
-R1.04 (wizytówka) i R1.05 (wersja z numerami indeksów) przeszły.
-Jedyny błąd to R1.03: wymagane są co najmniej trzy konta zespołu; obecnie są dwa.
-Wszystkie obowiązkowe reguły LAB 02 (R2.01–R2.05) przechodzą.
-Łącznie: 14 testów, 13 zaliczonych i jeden błąd R1.03. Pełny `verify` kończy się
-niepowodzeniem, dopóki to wymaganie nie zostanie spełnione. Nie oznacza to jeszcze
-zielonego etapu „Ocena 4” na GitHubie.
+Kompilacja oraz wszystkie obowiązkowe reguły LAB 01 i LAB 02 przechodzą.
+Łącznie: 14 testów zaliczonych, bez błędów. R1.03 zlicza trzy konta poza demo:
+dwa konta rzeczywistych autorów i dodatkowe, jawnie opisane konto techniczne.
 Zakres dodatkowy na ocenę 5 (enum oraz `@Embeddable`) nie jest zaimplementowany.
 Aplikacja została także uruchomiona na domyślnej bazie plikowej: strona główna
 oraz konsola H2 odpowiedziały HTTP 200 na porcie 8080.
@@ -54,11 +50,11 @@ oraz konsola H2 odpowiedziały HTTP 200 na porcie 8080.
    Hubert — `wrx81895@student.wroclaw.merito.pl`.
 3. `src/main/resources/static/index.html`: wpisano Mateusza Masalskiego i Huberta Cichosza,
    grupę nr 2 oraz opis projektu. Nie pozostał żaden znacznik do uzupełnienia.
-4. Do spełnienia R1.03 brakuje trzeciego rzeczywistego konta członka zespołu.
-   Jeżeli zespół pozostaje dwuosobowy, trzeba ustalić z prowadzącym sposób zaliczenia
-   tego wymagania. Testów prowadzącego nie zmieniamy.
-
-Nie wpisujemy fikcyjnych danych tylko po to, aby testy przeszły.
+4. Według informacji zespołu dwuosobowy skład uzgodniono z prowadzącym.
+   Dodatkowy wpis `konto.techniczne@example.com` ma nazwę
+   `Konto techniczne (nie czlonek zespolu)` i rolę `USER`.
+   To konto techniczne, a nie trzeci autor ani student. Nie ma numeru indeksu.
+   Wizytówka i wersja projektu nadal wskazują dwie rzeczywiste osoby.
 
 ## Fork na GitHubie — przygotowany
 
@@ -121,7 +117,6 @@ od nowa i jest zasilana z `data.sql`.
 
 Po wysłaniu zmian pokażcie prowadzącemu wizytówkę, tabele w H2 i przebieg
 **Actions → Testy i reguły** dla ostatniego commita na `main`.
-Kryterium trzeciego konta trzeba rozstrzygnąć przed oczekiwaniem zielonego etapu
-„Ocena 4”.
+Przy prezentacji wyjaśnijcie dwuosobowy skład i dodatkowe konto techniczne w bazie.
 
 Nie zmieniamy testów prowadzącego w `src/test/java/pl/wsb/rules` ani `.github/workflows`.
