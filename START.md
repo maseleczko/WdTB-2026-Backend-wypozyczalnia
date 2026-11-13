@@ -67,9 +67,8 @@ Fork to kopia szablonu na koncie jednej osoby z zespołu.
 Repozytorium zespołu: https://github.com/maseleczko/WdTB-2026-Backend-wypozyczalnia.
 Nazwa została zmieniona, GitHub Actions są włączone, a lokalna gałąź `main`
 śledzi `origin/main` z tego forka. `upstream` wskazuje na szablon prowadzącego.
-Przygotowane zmiany są lokalne; nie zostały jeszcze wysłane na GitHuba.
-Użytkownik zatwierdził publiczną publikację danych zespołu. Wysyłka wymaga
-działającego logowania Git do konta właściciela repozytorium.
+Kolejne zmiany zapisuj przez **Git → Commit**, a następnie **Push**.
+Po wysłaniu sprawdź przebieg **Actions → Testy i reguły** dla ostatniego commita.
 
 Do wykonania: w **Settings → Collaborators → Add people** dodaj pozostałych członków zespołu.
 
