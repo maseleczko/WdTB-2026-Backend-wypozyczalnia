@@ -6,6 +6,9 @@ Na LAB 02 dodano encje `Tool`, `Customer` i `Rental`, bez relacji,
 oraz po trzy rekordy w ich tabelach. Kwoty są zapisane jako `BigDecimal`.
 
 Wizytówka: http://localhost:8080. Konsola bazy: http://localhost:8080/h2-console.
+Na macOS kliknij dwukrotnie `uruchom.command` i poczekaj na komunikat
+`Started WypozyczalniaApplication`. Skrypt pobierze potrzebne narzędzia do
+ignorowanego katalogu `.local-tools`. Zatrzymanie aplikacji: **Ctrl+C**.
 Uruchomienie i omówienie encji: [START.md](START.md).
 Opis pomysłu i plan rozwoju: [KONCEPCJA.md](KONCEPCJA.md).
 

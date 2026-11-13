@@ -1,5 +1,27 @@
 # Projekt wypozyczalnia — LAB 01 i LAB 02
 
+## Najprostsze uruchomienie na tym Macu
+
+1. W Finderze otwórz folder projektu i kliknij dwukrotnie `uruchom.command`.
+2. Poczekaj w Terminalu na `Started WypozyczalniaApplication`.
+   Przy pierwszym uruchomieniu skrypt pobiera oficjalne JDK 21, Maven i zależności.
+3. Otwórz http://localhost:8080. Pozostaw okno Terminala otwarte.
+4. Aby zatrzymać aplikację, naciśnij **Ctrl+C** w tym oknie.
+
+Narzędzia są w `.local-tools`, który nie trafia do GitHuba. Skrypt nie wymaga
+instalacji systemowej Javy ani Mavena. Potrzebuje internetu przy pierwszym użyciu.
+Jeśli port 8080 jest już zajęty przez tę aplikację, otwórz jej stronę zamiast
+uruchamiać drugą kopię.
+
+Alternatywnie w Terminalu:
+
+```bash
+cd '/Users/mateuszmasalski/Documents/ChatGPT/technologie backendowe'
+./uruchom.command
+```
+
+Testy obowiązkowe: `./scripts/maven.sh verify -DexcludedGroups=ocena5`.
+
 ## Co jest przygotowane
 
 - Oryginalny szablon prowadzącego z dokumentacją, testami i GitHub Actions.
@@ -46,8 +68,8 @@ Repozytorium zespołu: https://github.com/maseleczko/WdTB-2026-Backend-wypozycza
 Nazwa została zmieniona, GitHub Actions są włączone, a lokalna gałąź `main`
 śledzi `origin/main` z tego forka. `upstream` wskazuje na szablon prowadzącego.
 Przygotowane zmiany są lokalne; nie zostały jeszcze wysłane na GitHuba.
-Publikacja obejmie nazwiska, numery indeksów i e-maile uczelniane zawarte w plikach;
-przed wysłaniem wymagana jest wyraźna zgoda użytkownika.
+Użytkownik zatwierdził publiczną publikację danych zespołu. Wysyłka wymaga
+działającego logowania Git do konta właściciela repozytorium.
 
 Do wykonania: w **Settings → Collaborators → Add people** dodaj pozostałych członków zespołu.
 

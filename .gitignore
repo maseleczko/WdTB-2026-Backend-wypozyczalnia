@@ -5,6 +5,7 @@ target/
 .DS_Store
 *.log
 /data/
+/.local-tools/
 
 # Materiały prowadzącego (wykłady, arkusze z danymi studentów) nie trafiają do repozytorium
 *.pptx
