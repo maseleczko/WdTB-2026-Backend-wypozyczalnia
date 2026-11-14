@@ -61,3 +61,9 @@ stawki i daty zwrotu. Narzędzie należy do jednej kategorii.
 Backend dla małej wypożyczalni narzędzi, który porządkuje ewidencję sprzętu,
 klientów, wypożyczeń i zwrotów. Docelowo pozwoli sprawdzać dostępność narzędzi,
 wykrywać opóźnienia oraz obliczać koszt wypożyczenia.
+
+## Stan LAB 03 — zakres na ocenę 3
+
+Dodano relację `Rental.customer` (`@ManyToOne`) z wymaganą kolumną `customer_id`.
+Każde wypożyczenie należy do jednego klienta, a klient może mieć wiele wypożyczeń.
+Pozostałe relacje i dodatkowe tabele z koncepcji są planem dalszego rozwoju.

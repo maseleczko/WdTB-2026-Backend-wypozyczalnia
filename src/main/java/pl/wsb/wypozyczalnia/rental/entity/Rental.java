@@ -2,6 +2,9 @@ package pl.wsb.wypozyczalnia.rental.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -10,7 +13,7 @@ import jakarta.persistence.Table;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-/** Wypożyczenie; powiązania z klientem i narzędziami dodamy w dalszym rozwoju. */
+/** Wypożyczenie przypisane do jednego klienta; klient może mieć wiele wypożyczeń. */
 @Entity
 @Table(name = "rental")
 public class Rental {
@@ -38,17 +41,22 @@ public class Rental {
     @Column(name = "total_cost", nullable = false, precision = 10, scale = 2)
     private BigDecimal totalCost;
 
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "customer_id", nullable = false)
+    private Customer customer;
+
     protected Rental() {
     }
 
     public Rental(String rentalNumber, LocalDate startDate, LocalDate dueDate,
-                  LocalDate returnedDate, String status, BigDecimal totalCost) {
+                  LocalDate returnedDate, String status, BigDecimal totalCost, Customer customer) {
         this.rentalNumber = rentalNumber;
         this.startDate = startDate;
         this.dueDate = dueDate;
         this.returnedDate = returnedDate;
         this.status = status;
         this.totalCost = totalCost;
+        this.customer = customer;
     }
 
     public Long getId() {
@@ -77,5 +85,9 @@ public class Rental {
 
     public BigDecimal getTotalCost() {
         return totalCost;
+    }
+
+    public Customer getCustomer() {
+        return customer;
     }
 }

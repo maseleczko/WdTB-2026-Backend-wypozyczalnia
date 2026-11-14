@@ -2,6 +2,7 @@
 
 Backend małej wypożyczalni narzędzi, rozwijany na zajęciach WdTB.
 Na LAB 01 przygotowano nazwę projektu, koncepcję, konta zespołu i wizytówkę.
+Na LAB 03 dodano relację `Rental → Customer` (`@ManyToOne`) i dane powiązane, w zakresie na ocenę 3.
 Na LAB 02 dodano encje `Tool`, `Customer` i `Rental`, bez relacji,
 oraz po trzy rekordy w ich tabelach. Kwoty są zapisane jako `BigDecimal`.
 

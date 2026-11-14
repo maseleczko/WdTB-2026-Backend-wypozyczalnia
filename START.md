@@ -1,4 +1,4 @@
-# Projekt wypozyczalnia — LAB 01 i LAB 02
+# Projekt wypozyczalnia — LAB 01, LAB 02 i LAB 03
 
 ## Najprostsze uruchomienie na tym Macu
 
@@ -20,7 +20,7 @@ cd '/Users/mateuszmasalski/Documents/ChatGPT/technologie backendowe'
 ./uruchom.command
 ```
 
-Testy obowiązkowe: `./scripts/maven.sh verify -DexcludedGroups=ocena5`.
+Testy obowiązkowe: `./scripts/maven.sh verify '-DexcludedGroups=ocena4|ocena5'`.
 
 ## Co jest przygotowane
 
@@ -29,9 +29,10 @@ Testy obowiązkowe: `./scripts/maven.sh verify -DexcludedGroups=ocena5`.
 - Opis problemu, odbiorcy i funkcji na stronie startowej.
 - Pełna koncepcja i tekst do arkusza zespołów w `KONCEPCJA.md`.
 - Trzy własne encje bez relacji: `Tool`, `Customer` i `Rental`, po trzy rekordy
-  w każdej tabeli oraz aktywne reguły LAB 02 (`<lab>2</lab>`).
+  w każdej tabeli; na LAB 03 dodano relację `Rental → Customer`.
+- Aktywne reguły LAB 03 (`<lab>3</lab>`), zakres na ocenę 3.
 
-## Wynik sprawdzenia LAB 01 i LAB 02
+## Wynik wcześniejszego sprawdzenia LAB 01 i LAB 02
 
 Projekt sprawdzono na JDK 21 poleceniem Maven `verify -DexcludedGroups=ocena5`.
 Kompilacja oraz wszystkie obowiązkowe reguły LAB 01 i LAB 02 przechodzą.
@@ -96,7 +97,7 @@ chroniony konstruktor bez argumentów dla JPA, konstruktor z danymi i gettery.
 Daty to `LocalDate`, kwoty to `BigDecimal` z dwiema cyframi po przecinku.
 `returned_date` może być puste, bo sprzęt nie zawsze jest już zwrócony.
 Status jest tekstem: `PLANNED`, `ACTIVE`, `RETURNED` lub `CANCELLED`.
-Relacje, repozytoria, serwisy i REST API powstaną na późniejszych zajęciach.
+Na LAB 03 dodano relację wypożyczenia z klientem. Pozostałe relacje, repozytoria, serwisy i REST API pozostają do dalszego rozwoju.
 
 Zapytania do konsoli H2:
 
@@ -120,3 +121,31 @@ Po wysłaniu zmian pokażcie prowadzącemu wizytówkę, tabele w H2 i przebieg
 Przy prezentacji wyjaśnijcie dwuosobowy skład i dodatkowe konto techniczne w bazie.
 
 Nie zmieniamy testów prowadzącego w `src/test/java/pl/wsb/rules` ani `.github/workflows`.
+
+## LAB 03 — jedna relacja, zakres na ocenę 3
+
+`pom.xml` ma `<lab>3</lab>`. Aktualne reguły i workflow pobrano z szablonu prowadzącego.
+W `Rental` pole `customer` ma `@ManyToOne(fetch = FetchType.LAZY, optional = false)`
+i `@JoinColumn(name = "customer_id", nullable = false)`, getter oraz parametr konstruktora.
+W bazie klucz obcy `rental.customer_id` wskazuje `customer.id`.
+
+Po zmianie uruchom aplikację ponownie. W H2 wykonaj:
+
+```sql
+SELECT id, first_name, last_name FROM customer;
+SELECT rental_number, customer_id, status FROM rental;
+```
+
+Oczekiwane identyfikatory klientów dla wypożyczeń 001, 002, 003 to **1, 2, 1**.
+Klient 1 ma dwa wypożyczenia. Klucz obcy nie pozwala wskazać nieistniejącego klienta.
+`nullable = false` wymaga klienta, a `LAZY` odkłada odczyt jego danych do momentu użycia.
+
+Testy zakresu na 3 (takie same jak etap „Ocena 3” na GitHubie):
+
+```bash
+./scripts/maven.sh verify '-DexcludedGroups=ocena4|ocena5'
+```
+
+Na GitHubie wybierz **Actions → Testy i reguły → Run workflow → main → numer 3**.
+Etap „Ocena 3” powinien być zielony. Warunki na 4 i 5 wykraczają poza wybrany zakres.
+Pełne `verify` bez filtra uruchamia również te dodatkowe warunki i może kończyć się błędami.

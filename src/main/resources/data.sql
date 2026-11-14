@@ -30,8 +30,9 @@ insert into customer (first_name, last_name, email, phone) values
     ('Jan', 'Przykładowy', 'jan@example.com', '000000002'),
     ('Ewa', 'Demonstracyjna', 'ewa@example.com', '000000003');
 
--- LAB 02: wypożyczenia. Relacje z klientami i sprzętem powstaną na dalszych zajęciach.
-insert into rental (rental_number, start_date, due_date, returned_date, status, total_cost) values
-    ('WYP-2026-001', DATE '2026-10-22', DATE '2026-10-25', null, 'ACTIVE', 135.00),
-    ('WYP-2026-002', DATE '2026-10-21', DATE '2026-10-23', DATE '2026-10-23', 'RETURNED', 70.00),
-    ('WYP-2026-003', DATE '2026-10-25', DATE '2026-10-26', null, 'PLANNED', 55.00);
+-- ===== LAB 03 · rental =====
+-- Klienci są dodani powyżej. Klient 1 ma dwa wypożyczenia, klient 2 jedno.
+insert into rental (rental_number, start_date, due_date, returned_date, status, total_cost, customer_id) values
+    ('WYP-2026-001', DATE '2026-10-22', DATE '2026-10-25', null, 'ACTIVE', 135.00, 1),
+    ('WYP-2026-002', DATE '2026-10-21', DATE '2026-10-23', DATE '2026-10-23', 'RETURNED', 70.00, 2),
+    ('WYP-2026-003', DATE '2026-10-25', DATE '2026-10-26', null, 'PLANNED', 55.00, 1);

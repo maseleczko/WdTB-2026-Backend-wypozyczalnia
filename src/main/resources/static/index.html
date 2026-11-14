@@ -40,7 +40,7 @@
     <h1>Wypożyczalnia narzędzi</h1>
     <p>Projekt zespołowy z przedmiotu Wprowadzenie do technologii backendowych.
        Na LAB 01 przygotowaliśmy szkielet i koncepcję, a na LAB 02 dodaliśmy tabele
-       oraz dane przykładowe. Funkcje wypożyczalni będziemy rozwijać na kolejnych zajęciach.</p>
+       oraz dane przykładowe. Na LAB 03 powiązaliśmy wypożyczenia z klientami. Funkcje wypożyczalni będziemy rozwijać na kolejnych zajęciach.</p>
   </header>
 
   <!-- LAB 01: wizytówka Waszego projektu, na jej podstawie prezentujecie projekt na początku LAB 02.
@@ -57,6 +57,7 @@
     <ul>
       <li><b>LAB 01:</b> Wybrano koncepcję wypożyczalni narzędzi, zmieniono pakiet na <code>pl.wsb.wypozyczalnia</code>, klasę startową na <code>WypozyczalniaApplication</code>, nazwę aplikacji i <code>artifactId</code>, wpisano autorów, grupę, konta dwóch osób i numery indeksów do wersji oraz opisano projekt w wizytówce i pliku <code>KONCEPCJA.md</code>.</li>
       <li><b>LAB 02:</b> Dodano trzy encje JPA bez relacji: <code>Tool</code>, <code>Customer</code> i <code>Rental</code>, tabele <code>tool</code>, <code>customer</code> i <code>rental</code> oraz po trzy przykładowe rekordy. Kwoty przechowujemy jako <code>BigDecimal</code>. Włączono reguły LAB 02 w <code>pom.xml</code>.</li>
+      <li><b>LAB 03 (zakres na 3):</b> Dodano wymaganą relację wiele-do-jednego <code>Rental → Customer</code> i klucz obcy <code>rental.customer_id</code>. Każde wypożyczenie wskazuje klienta; klient nr 1 ma dwa wypożyczenia.</li>
     </ul>
     <p class="muted">Zespół liczy dwie osoby. Dodatkowy wpis w bazie to jawnie oznaczone konto techniczne, które nie reprezentuje trzeciego autora. Według informacji zespołu dwuosobowy skład uzgodniono z prowadzącym.</p>
   </section>
